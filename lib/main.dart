@@ -110,7 +110,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
 
             const SizedBox(
-              height: 15.0,
+              height: 13.0,
             ),
 
             ElevatedButton(
@@ -121,7 +121,7 @@ class _SearchPageState extends State<SearchPage> {
                     ))),
 
             const SizedBox(
-              height: 10.0,
+              height: 8.0,
             ),
 
             if (flag != "") ...[
@@ -157,7 +157,7 @@ class _SearchPageState extends State<SearchPage> {
           response.body; //get data from response and assigned to a variable
       var parsedJson = json.decode(jsonData);
 
-      if (parsedJson.isEmpty) {
+      if ((parsedJson.isEmpty) || (_searchResults.isEmpty)){
         setState(() {
           desc = "No data available";
           flag = "";
